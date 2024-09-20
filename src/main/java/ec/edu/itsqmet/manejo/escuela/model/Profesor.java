@@ -16,7 +16,7 @@ public class Profesor  implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idProfesor;
+    private int idProfesor;
     @Column(length = 10)
     private String cedulaProfesor; 
     @Column(length = 50)
