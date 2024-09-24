@@ -78,13 +78,8 @@
                         <a class="collapse-item" href="register.html">Crear</a>
                         
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Aula:</h6>
-                        <a class="collapse-item" th:href="@{/aula}">Ver</a>
-                        <a class="collapse-item active" href="blank.html">Crear</a>
-
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Semestre:</h6>
-                        <a class="collapse-item" th:href="@{/semestre}">Ver</a>
+                        <h6 class="collapse-header">Curso:</h6>
+                        <a class="collapse-item" href="404.html">Ver</a>
                         <a class="collapse-item active" href="blank.html">Crear</a>
                     </div>
                 </div>
@@ -325,7 +320,30 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="semestre:${listaSemestres}">
+                                <td th:text="${semestre.id}"></td>
+                                <td th:text="${semestre.nombre}"></td>
+                                <td>
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal">
+                                        Editar
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" >
+                                     Eliminar
+                                    </button>
+                                    <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+                                  </svg></a>
+                                </td>
+                                
+                            </tr>
+                          </tbody>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -374,15 +392,23 @@
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script th:src="@{theme/vendor/jquery/jquery.min.js}"></script>
-    <script th:src="@{theme/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script th:src="@{theme/vendor/jquery/jquery.min.js}"></script>
+        <script th:src="@{themevendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    
+        <!-- Core plugin JavaScript-->
+        <script th:src="@{themevendor/jquery-easing/jquery.easing.min.js}"></script>
+    
+        <!-- Custom scripts for all pages-->
+        <script th:src="@{js/sb-admin-2.min.js}"></script>
+    
+        <!-- Page level plugins -->
+        <script th:src="@{vendor/datatables/jquery.dataTables.min.js}"></script>
+        <script th:src="@{vendor/datatables/dataTables.bootstrap4.min.js}"></script>
+    
+        <!-- Page level custom scripts -->
+        <script th:src="@{js/demo/datatables-demo.js}"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script th:src="@{theme/vendor/jquery-easing/jquery.easing.min.js}"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script th:src="@{theme/js/sb-admin-2.min.js}"></script>
 
 </body>
 

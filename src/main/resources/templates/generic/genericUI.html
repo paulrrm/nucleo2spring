@@ -78,13 +78,8 @@
                         <a class="collapse-item" href="register.html">Crear</a>
                         
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Aula:</h6>
-                        <a class="collapse-item" th:href="@{/aula}">Ver</a>
-                        <a class="collapse-item active" href="blank.html">Crear</a>
-
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Semestre:</h6>
-                        <a class="collapse-item" th:href="@{/semestre}">Ver</a>
+                        <h6 class="collapse-header">Curso:</h6>
+                        <a class="collapse-item" href="404.html">Ver</a>
                         <a class="collapse-item active" href="blank.html">Crear</a>
                     </div>
                 </div>
@@ -325,7 +320,9 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                    <section layout:fragment="paginas">
+                        <!-- Contenido -->
+                    </section>
 
                 </div>
                 <!-- /.container-fluid -->

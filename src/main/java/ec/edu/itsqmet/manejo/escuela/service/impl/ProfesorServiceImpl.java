@@ -23,5 +23,16 @@ public class ProfesorServiceImpl implements IProfesorService{
         System.out.println("Creando profesor...");
 
     }
+    @Override
+    public void updateProfesor(Profesor profesor) {
+        
+        iProfesorRepository.save(profesor);
+    }
+    @Override
+    public void deleteProfesor(Integer id){
+    
+        iProfesorRepository.deleteById(id);
+        
+    }
     
 }

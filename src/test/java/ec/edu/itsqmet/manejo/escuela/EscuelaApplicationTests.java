@@ -23,6 +23,21 @@ class EscuelaApplicationTests {
 		profesor.setDireccionProfesor("test@test.com");
 		profesor.setCedulaProfesor("12123132");
 		profesorService.insertProfesor(profesor);
+
+		Profesor profesor2 = new Profesor();
+		profesor2.setIdProfesor(0);
+		profesor2.setNombreProfesor("Juan");
+		profesor2.setNombreProfesor("Danny");
+		profesor2.setApellidoProfesor("Bermeo");
+		profesor2.setEmailProfesor("test@test.com");
+		profesor2.setDireccionProfesor("test@test.com");
+		profesor2.setCedulaProfesor("12123132");
+		profesorService.insertProfesor(profesor2);
+
+		profesorService.deleteProfesor(0);
+
+
+		
 	}
 
 }

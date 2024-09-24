@@ -1,7 +1,5 @@
 package ec.edu.itsqmet.manejo.escuela.model;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -13,16 +11,14 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Estudiante implements Serializable {   
-    private static final long serialVersionUID = 1L;
+public class Semestre {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idEstudiante;
-    private String nombre;
-    private String apellido;
-    private String email;
+    private int id;
 
-    @OneToMany(mappedBy = "fkMatricula")
-    private List<Matricula> matriculas = new ArrayList<>(); //   Relación con Matricula
-    
+    private String nombre;
+
+    @OneToMany(mappedBy = "fksemestre")
+    private List<Curso> cursoList;
 }

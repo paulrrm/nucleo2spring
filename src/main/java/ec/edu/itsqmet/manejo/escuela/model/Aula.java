@@ -1,11 +1,13 @@
 package ec.edu.itsqmet.manejo.escuela.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 @Entity
@@ -19,4 +21,6 @@ public class Aula implements Serializable { //
     private String nombreAula;
     private int capacidadAula;
     
+    @OneToMany(mappedBy = "fkAulaCurso")
+    private List<Curso> fkcursos;
 }

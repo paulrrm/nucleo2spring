@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Entity
@@ -19,5 +21,15 @@ public class Curso implements Serializable {
     private String cursoNombre;
     private int cursoCapacidad;
 
+    @ManyToOne
+    @JoinColumn(name =  "fkCursoProfe")
+    Profesor fkprofesorc;
 
+    @ManyToOne
+    @JoinColumn(name =  "fkAulaCurso")
+    Aula fkAulaCurso;
+
+    @ManyToOne
+    @JoinColumn(name =  "fkSemestre")
+    Semestre fksemestre;
 }

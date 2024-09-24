@@ -1,12 +1,15 @@
 package ec.edu.itsqmet.manejo.escuela.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 @Entity
@@ -28,6 +31,7 @@ public class Profesor  implements Serializable{
     @Column(length = 250)
     private String emailProfesor;
 
-
+    @OneToMany(mappedBy = "fkprofesorc")
+    private List<Curso> fkcursosp = new ArrayList<>(); //   Relación con Curso
 
 }
