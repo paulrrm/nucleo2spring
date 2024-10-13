@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{plantilla/plantilla}">
+<body>
+<div layout:fragment="pagina">
+	<form class="form-horizontal" th:action="@{/nuevoPaqueteR}" th:object="${nuevoPaquete}" method="post">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Detalle:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="detalleP"   th:field="*{detalle}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Precio:</label>
+      <div class="col-sm-10">          
+        <input type="number" class="form-control" id="precioP"  th:field="*{precio}">
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-outline-warning">Guardar</button>
+      </div>
+    </div>
+    <input type="hidden" th:field="*{idPaquete}">
+  </form>
+</body>
+</html>

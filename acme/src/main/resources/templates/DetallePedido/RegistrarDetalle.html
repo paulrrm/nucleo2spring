@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{plantilla/plantilla}">
+<body>
+<div layout:fragment="pagina">
+<form class="form-horizontal" th:action="@{/nuevoDetallePedidoR}" th:object="${nuevoDetallePedido}" method="post">
+    <select th:field="*{fkCliente}" class="form-select">
+			  <option value="0">Cliente: </option>
+			  <option th:each="eve: ${listadoCliente}" th:value="${eve.idCliente}" th:text="${eve.nombreCliente}" ></option>
+			</select><br>
+			
+	<select th:field="*{fkEvento}" class="form-select">
+			  <option value="0">Evento: </option>
+			  <option th:each="eve: ${listadoEvento}" th:value="${eve.idEvento}" th:text="${eve.fechaEvento}" ></option>
+			</select><br>
+    <select th:field="*{fkProducto}" class="form-select">
+			  <option value="0">Productos: </option>
+			  <option th:each="eve: ${listadoProducto}" th:value="${eve.idProucto}" th:text="${eve.nombreProducto}" ></option>
+			</select><br>
+	<select th:field="*{fkPaquete}" class="form-select">
+			  <option value="0">Paquete: </option>
+			  <option th:each="eve: ${listadoPaquete}" th:value="${eve.idPaquete}" th:text="${eve.detalle}" ></option>
+			</select><br>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-outline-warning">Guardar</button>
+      </div>
+    </div>
+    <input type="hidden" th:field="*{idDetallePedido}">
+  </form>
+</body>
+</html>
